@@ -16,6 +16,8 @@
     @endif
 
     <div class="container mt-5">
+        @include('inc.messages')
+
         <div class="row">
             <div class="col-2">
                 @include('inc.sidebar')
