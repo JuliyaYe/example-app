@@ -25,4 +25,12 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/contact/all', 'App\Http\Controllers\ContactController@allData')->name('contact-data');
+Route::get('/contact/{id}', 'App\Http\Controllers\ContactController@showMessage')->name('contact-message');
+Route::get('/contact/{id}/update', 'App\Http\Controllers\ContactController@updateMessage')->name('message-update');
+Route::get('/contact/{id}/delete', 'App\Http\Controllers\ContactController@deleteMessage')->name('message-delete');
+
+
 Route::post('/contact/submit', 'App\Http\Controllers\ContactController@submit')->name('contact-form');
+Route::post('/contact/{id}/update', 'App\Http\Controllers\ContactController@updateMessageSubmit')->name('message-form-submit');
+
